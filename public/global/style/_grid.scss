@@ -1,0 +1,98 @@
+/* ------------[ GRID MASTER ]------------ */
+
+$break-extraSmall: 375px;   // mobile
+$break-small:      992px;   // tablet
+$break-medium:    1024px;   // smallDesktop
+$break-large:     1220px;   // largeDesktop
+
+@mixin respond-to($media) {
+    @if $media==xSmall {    // mobile
+        @media screen and (min-width: $break-extraSmall) {
+            @content;
+        }
+    }
+    @if $media==small {     // tablet
+        @media screen and (min-width: $break-small) {
+            @content;
+        }
+    }
+    @if $media==medium {    // smallDesktop
+        @media screen and (min-width: $break-medium) {
+            @content;
+        }
+    }
+    @if $media==large {     // largeDesktop
+        @media screen and (min-width: $break-large) {
+            @content;
+        }
+    }
+}
+
+.container {
+    width: calc(100%);
+    margin: 0 auto;
+    // max-width: 375px;
+    padding: 0 16px;
+
+    @include respond-to(small) {
+        max-width: 768px;
+        padding: 0 32px;
+    }
+
+    @include respond-to(medium) {
+        max-width: 1024px;
+        padding: 0 64px;
+    }
+
+    @include respond-to(large) {
+        max-width: 1440px;
+        padding: 0 116px;
+    }
+}
+
+div[class^="col-"] {
+    // background: orange;
+    // border: 1px solid red;
+    // padding: 1rem 0;
+    // text-align: center;
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-line-pack: center;
+        align-content: center;
+
+    $columns: 12;
+    @for $i from 1 through $columns {
+        .col-#{$i} {
+            width: 100%;
+            margin: 8px 0;
+
+            @include respond-to(small) {
+                width: calc(100% / #{#{$columns} * #{$i}} - 16px);
+                margin: 8px 8px;
+            }
+        }
+    }
+
+    @include respond-to(small) {
+        @for $i from 1 through $columns {
+            .col-offset-#{$i} {
+                margin-left: calc(100% / #{#{$columns} * #{$i}} + 8px);
+            }
+        }
+    }
+}
+
+/* ------------[ /GRID MASTER ]------------ */

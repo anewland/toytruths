@@ -1,0 +1,13 @@
+:root {
+    --truckRed: hsl(356, 87%, 30%); // #8e0a12;
+    --darkBlue: hsl(220, 18%, 23%); // #303745;
+}
+
+@import 'reset';
+@import 'grid';
+@import 'typography';
+@import 'layout';
+
+.hidden {
+    display: none;
+}

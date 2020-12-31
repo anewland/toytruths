@@ -1,0 +1,73 @@
+/* ------------[ TYPOGRAPHY ]------------ */
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap');
+
+@function calculateRem($size) {
+    $remSize: ($size)/16;
+    @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+    font-size: ($size)+px;
+    font-size: calculateRem($size);
+}
+
+@mixin lineHeightSize($size) {
+    line-height: ($size)+px;
+    line-height: calculateRem($size);
+}
+
+@mixin font($fontsize,$lineheight) {
+    @include fontSize($fontsize);
+    @include lineHeightSize($lineheight);
+}
+
+@mixin monda-regular {
+    font-family: 'Monda', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin monda-bold {
+    font-family: 'Monda', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+h1 {
+    @include monda-bold;
+    @include font(38,42);
+}
+
+h2 {
+    @include monda-bold;
+    @include font(30,36);
+}
+
+h3 {
+    @include monda-bold;
+    @include font(22,28);
+    text-transform: uppercase;
+}
+
+h4 {
+    @include monda-bold;
+    @include font(18,22);
+}
+
+p {
+    @include monda-regular;
+    @include font(14,22);
+}
+
+a {
+    @include monda-regular;
+    color: var(--truckRed);
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+        color: #222222;
+    }
+}
+
+/* ------------[ /TYPOGRAPHY ]------------ */
