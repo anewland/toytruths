@@ -2,3 +2,79 @@ body {
     margin: 0;
     background-color: #f1f1f1;
 }
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 2rem;
+
+    a {
+        background-color: var(--truckRed);
+        color: #ffffff;
+        padding: .1em 1.3rem;
+        border-radius: .25rem;
+    }
+}
+
+.fact {
+    position: relative;
+    overflow: hidden;
+
+    div {
+        background-color: #ffffff;
+        padding: 26px;
+        border-radius: 1rem;
+        border: 2px solid #e0e0e0;
+
+        p {
+            @include font(20,30);
+            opacity: 0;
+            transition: .5s ease;
+            pointer-events: none;
+        }
+
+        &.True.cont {
+            background-color: rgba(0,128,0,.1);
+        }
+
+        &.False.cont {
+            background-color: rgba(143,10,19,.1);
+        }
+
+        &.clicked p { opacity: 1; }
+    }
+
+    button.answer {
+        display: block;
+        background-color: #e0e0e0;
+        height: 29px;
+        width: 30px;
+        position: absolute;
+        top: -13px;
+        right: -15px;
+        transform: rotate(45deg);
+        border: none;
+
+        &:focus {
+            outline: none;
+            border: none;
+        }
+
+        span { opacity: 0; }
+    }
+
+    &:nth-child(1)::after { content: 'A'; }
+    &:nth-child(2)::after { content: 'B'; }
+    &:nth-child(3)::after { content: 'C'; }
+
+    &::after {
+        position: absolute;
+        right: 10px;
+        z-index: 50;
+        bottom: -10px;
+        font-size: 50px;
+        opacity: .1;
+        font-family: 'Monda';
+    }
+}

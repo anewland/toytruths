@@ -408,6 +408,97 @@ body {
   background-color: #f1f1f1;
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.buttons a {
+  background-color: var(--truckRed);
+  color: #ffffff;
+  padding: .1em 1.3rem;
+  border-radius: .25rem;
+}
+
+.fact {
+  position: relative;
+  overflow: hidden;
+}
+
+.fact div {
+  background-color: #ffffff;
+  padding: 26px;
+  border-radius: 1rem;
+  border: 2px solid #e0e0e0;
+}
+
+.fact div p {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 30px;
+  line-height: 1.875rem;
+  opacity: 0;
+  transition: .5s ease;
+  pointer-events: none;
+}
+
+.fact div.True.cont {
+  background-color: rgba(0, 128, 0, 0.1);
+}
+
+.fact div.False.cont {
+  background-color: rgba(143, 10, 19, 0.1);
+}
+
+.fact div.clicked p {
+  opacity: 1;
+}
+
+.fact button.answer {
+  display: block;
+  background-color: #e0e0e0;
+  height: 29px;
+  width: 30px;
+  position: absolute;
+  top: -13px;
+  right: -15px;
+  transform: rotate(45deg);
+  border: none;
+}
+
+.fact button.answer:focus {
+  outline: none;
+  border: none;
+}
+
+.fact button.answer span {
+  opacity: 0;
+}
+
+.fact:nth-child(1)::after {
+  content: 'A';
+}
+
+.fact:nth-child(2)::after {
+  content: 'B';
+}
+
+.fact:nth-child(3)::after {
+  content: 'C';
+}
+
+.fact::after {
+  position: absolute;
+  right: 10px;
+  z-index: 50;
+  bottom: -10px;
+  font-size: 50px;
+  opacity: .1;
+  font-family: 'Monda';
+}
+
 .hidden {
   display: none;
 }
