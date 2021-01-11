@@ -3,6 +3,12 @@
     --darkBlue: hsl(220, 18%, 23%); // #303745;
 }
 
+section.content {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
 @import 'reset';
 @import 'grid';
 @import 'typography';

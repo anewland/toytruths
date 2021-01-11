@@ -24,6 +24,7 @@ export class Page extends Component {
 
   componentDidMount() {
     let params = getParams(window.location.href);
+    console.log('---- Round ' + params['round']);
 
     const api = 'https://admin.ithinkpixels.com/api/collections/get';
     const token = '148bed39568ed0436384f2e90bbe53';
@@ -46,6 +47,13 @@ export class Page extends Component {
 
   clicked(e) {
     e.target.classList.add('clicked');
+
+    console.dir((Number(e.target.dataset.i) + 1) + ' | ' + e.target.dataset.a);
+
+    if (e.target.classList.contains('False')) {
+      console.dir(e.target.dataset.t);
+    }
+
   }
 
   answer(e) {
@@ -67,20 +75,20 @@ export class Page extends Component {
               </div>
 
               <div className="col-12 buttons">
-                <a href="/?episode=23&round=1">Round 1</a>
-                <a href="/?episode=23&round=2">Round 2</a>
-                <a href="/?episode=23&round=3">Round 3</a>
-                <a href="/?episode=23&round=4">Round 4</a>
-                {/* <a href="/?episode=23&round=5">Round 5</a> */}
+                <a href="/?episode=24&round=1">Round 1</a>
+                <a href="/?episode=24&round=2">Round 2</a>
+                <a href="/?episode=24&round=3">Round 3</a>
+                <a href="/?episode=24&round=4">Round 4</a>
+                <a href="/?episode=24&round=5">Round 5</a>
                 {/* <a href="/?episode=23&round=6">Round 6</a> */}
               </div>
             </div>
 
             <div className="row">
-              {truths.map(t =>
-                <div className="col-12 fact">
-                  <div className={ t.status } onClick={ this.clicked }>
-                    <p key={ t._id } dangerouslySetInnerHTML={{ __html: t.fact }} />
+              {truths.map((t, index) =>
+                <div className="col-12 fact" key={ t._id }>
+                  <div className={ t.status } onClick={ this.clicked } data-a={ t.status } data-i={ index } data-t={ t.truth }>
+                    <p dangerouslySetInnerHTML={{ __html: t.fact }} />
                     <button className="answer" onClick={ this.answer }><span>A</span></button>
                   </div>
                 </div>

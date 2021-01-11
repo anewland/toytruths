@@ -4,6 +4,12 @@
   --darkBlue: #303745;
 }
 
+section.content {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
 /* ------------[ HTML RESET ]------------ */
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p,
@@ -445,11 +451,11 @@ body {
 }
 
 .fact div.True.cont {
-  background-color: rgba(0, 128, 0, 0.1);
+  background-color: rgba(0, 128, 0, 0.2);
 }
 
 .fact div.False.cont {
-  background-color: rgba(143, 10, 19, 0.1);
+  background-color: rgba(143, 10, 19, 0.2);
 }
 
 .fact div.clicked p {
@@ -478,15 +484,15 @@ body {
 }
 
 .fact:nth-child(1)::after {
-  content: 'A';
+  content: '1';
 }
 
 .fact:nth-child(2)::after {
-  content: 'B';
+  content: '2';
 }
 
 .fact:nth-child(3)::after {
-  content: 'C';
+  content: '3';
 }
 
 .fact::after {

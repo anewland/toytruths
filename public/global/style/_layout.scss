@@ -35,11 +35,11 @@ body {
         }
 
         &.True.cont {
-            background-color: rgba(0,128,0,.1);
+            background-color: rgba(0,128,0,.2);
         }
 
         &.False.cont {
-            background-color: rgba(143,10,19,.1);
+            background-color: rgba(143,10,19,.2);
         }
 
         &.clicked p { opacity: 1; }
@@ -64,9 +64,9 @@ body {
         span { opacity: 0; }
     }
 
-    &:nth-child(1)::after { content: 'A'; }
-    &:nth-child(2)::after { content: 'B'; }
-    &:nth-child(3)::after { content: 'C'; }
+    &:nth-child(1)::after { content: '1'; }
+    &:nth-child(2)::after { content: '2'; }
+    &:nth-child(3)::after { content: '3'; }
 
     &::after {
         position: absolute;
