@@ -30,7 +30,7 @@ export class Page extends Component {
     const token = '148bed39568ed0436384f2e90bbe53';
 
     axios.get(api+'/toy_truths?token='+token+'&filter[episode]='+params['episode']+'&filter[round]='+params['round']).then(res => {
-      console.dir(res);
+      // console.dir(res);
       const epTruths = [];
       res.data.entries.forEach(element => {
         epTruths.push(element);
