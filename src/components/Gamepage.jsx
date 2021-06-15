@@ -75,12 +75,12 @@ export class Page extends Component {
               </div>
 
               <div className="col-12 buttons">
-                <a href="/?episode=32&round=1">Round 1</a>
-                <a href="/?episode=32&round=2">Round 2</a>
-                <a href="/?episode=32&round=3">Round 3</a>
-                <a href="/?episode=32&round=4">Round 4</a>
-                <a href="/?episode=32&round=5">Round 5</a>
-                {/* <a href="/?episode=23&round=6">Round 6</a> */}
+                <a href="/?episode=43&round=1">Round 1</a>
+                <a href="/?episode=43&round=2">Round 2</a>
+                <a href="/?episode=43&round=3">Round 3</a>
+                <a href="/?episode=43&round=4">Round 4</a>
+                <a href="/?episode=43&round=5">Round 5</a>
+                <a href="/?episode=43&round=6">Round 6</a>
               </div>
             </div>
 
